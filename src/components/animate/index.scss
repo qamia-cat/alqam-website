@@ -1,0 +1,34 @@
+@import 'src/assets/scss/core';
+.animated-holder {
+    opacity: 0;
+    &:not(.fit) {
+        width: 100%;
+    }
+    &.animate {
+        animation: fadeInUp 0.8s forwards;
+        &.a-fadeIn {
+            animation-name: fadeIn;
+        }
+        &.a-bounceIn {
+            animation: bounceIn 1s forwards;
+        }
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, calc(var(--animate, #{rem(20)}) * var(--directtion, 1)), 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

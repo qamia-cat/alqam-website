@@ -1,0 +1,36 @@
+@import "src/assets/scss/core";
+.lets-get-in-touch-holder {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+    gap: rem(36);
+    @include mobile {
+        gap: rem(24);
+        grid-template-columns: 100%;
+    }
+    > li {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: inherit;
+    }
+}
+.lgit-contacts-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(24);
+    @include mobile {
+        gap: rem(16);
+    }
+    a {
+        display: flex;
+        align-items: center;
+        gap: rem(12);
+        font-size: rem(18);
+        @include mobile {
+            font-size: rem(16);
+            --icon-external-size: #{rem(20)};
+        }
+    }
+}

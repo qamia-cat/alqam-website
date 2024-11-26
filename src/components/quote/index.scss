@@ -1,0 +1,32 @@
+@import "src/assets/scss/core";
+.quote-holder {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto 1fr auto;
+    background: c(hero);
+    color: sc(hero);
+    padding: rem(36) rem(36) rem(36) rem(48);
+    border-radius: rem(100);
+    gap: rem(16);
+    @include mobile {
+        padding: rem(30);
+        border-radius: rem(24);
+        grid-template-columns: 100%;
+    }
+    > li {
+        display: flex;
+        &:first-child {
+            svg {
+                height: 100%;
+                width: auto;
+                max-width: inherit;
+                path {
+                    stroke: sc(hero, 0.1)
+                }
+            }
+        }
+        &:not(:first-child) {
+            align-self: center;
+        }
+    }
+}

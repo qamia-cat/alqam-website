@@ -1,0 +1,83 @@
+@import "src/assets/scss/core";
+.intro-holder {
+    $padding: rem(8);
+    width: 100%;
+    background: c(hero);
+    min-height: var(--vh, 100vh);
+    border-radius: 0 0 rem(48) rem(48);
+    padding: var(--headerHeight) $padding $padding $padding;
+    transition: 600ms border-radius, 600ms min-height;
+    max-width: 100vw;
+    overflow: hidden;
+    @include mobile {
+        border-radius: 0 0 rem(36) rem(36);
+    }
+    &.secondary {
+        min-height: calc(var(--vh, 100vh) - #{rem(200)});
+    }
+    &.nbr {
+        border-radius: 0 0 0 0;
+    }
+}
+.intro-container {
+    height: 100%;
+    border-radius: rem(40);
+    background: c(secondary);
+    color: sc(secondary);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    @include mobile {
+        border-radius: rem(28) rem(28);
+    }
+}
+.intro-contents {
+    padding: rem(48) 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    position: relative;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    h1, h2 {
+        mix-blend-mode: multiply;
+    }
+    h1 {
+        font-weight: 900;
+        font-family: $f;
+        @include mobile {
+            line-height: 1.4;
+        }
+        &[font-size="48"] {
+            font-size: rem(48) !important;
+            @include mobile {
+                font-size: rem(38) !important;
+            }
+        }
+        &:not([font-size="48"]) {
+            @include mobile {
+                font-size: rem(36) !important;
+            }
+        }
+    }
+    h2 {
+        font: 300 rem(20) / 1.6 $f;
+        @include mobile {
+            font-size: rem(18);
+        }
+    }
+}
+.intro-background {
+    border-radius: inherit;
+    background: fixed no-repeat url("./media/intro.jpg") 50% 50% / cover;
+    transform: scale(1.2);
+    opacity: 0;
+    animation: transformReveal 2s forwards;
+    @include retina {
+        background-image: url("./media/intro@2x.jpg");
+    }
+    @include mobile {
+        background-position: 80% 50%;
+    }
+}

@@ -1,0 +1,71 @@
+@import "src/assets/scss/core";
+@mixin onHover {
+    @include hover {
+        @content;
+    }
+    @include media-hover {
+        .btn-hover-trigger:hover & {
+            @content;
+        }
+    }
+}
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    font: 700 f(16) $f;
+    gap: rem(8);
+    transition: 400ms background, 400ms opacity;
+    @include mobile {
+        font-size: rem(14);
+    }
+    &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    @include onHover {
+        .icon-arrow-right {
+            transform: translateX(rem(6));
+        }
+    }
+    &:not(.a-inline) {
+        color: sc(hero);
+        height: rem(60);
+        border-radius: rem(60);
+        padding: 0 rem(40);
+        background: c(hero);
+        justify-content: center;
+        text-transform: uppercase;
+        @include mobile {
+            height: rem(54);
+            padding: 0 rem(36);
+        }
+        @include onHover {
+            background: c(hero-hover);
+        }
+    }
+    &.a-sc-light {
+        background: sc(hero, 0.1);
+        color: sc(hero);
+        @include onHover {
+            background: sc(hero, 0.15);
+        }
+    }
+    &.a-outline {
+        background: c(hero, 0);
+        color: c(hero);
+        border: rem(1.5) solid c(hero);
+        @include onHover {
+            color: sc(hero);
+            background: c(hero);
+        }
+    }
+    &.a-inline {
+        font-weight: 400;
+        color: c(hero);
+        @include onHover {
+            color: c(hero-hover);
+        }
+    }
+}

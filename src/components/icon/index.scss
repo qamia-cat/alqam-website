@@ -1,0 +1,43 @@
+@import 'src/assets/scss/core';
+.icon {
+    --size: var(--icon-external-size, #{rem(24)});
+    width: var(--size);
+    height: var(--size);
+    font-size: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 400ms transform;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: rem(1.5);
+        height: 120%;
+        box-shadow: 0 0 0 rem(1) c(b);
+        background: currentColor;
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) rotate(40deg) scale(0);
+        transition: 400ms opacity, 400ms transform;
+    }
+    &.icon-loader {
+        pointer-events: none;
+        svg {
+            width: var(--size, 100%);
+            height: var(--size, 100%);
+            animation: 300ms rotate linear infinite;
+            @keyframes rotate {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        &:before {
+            display: none;
+        }
+    }
+}

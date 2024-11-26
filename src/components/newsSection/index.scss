@@ -1,0 +1,12 @@
+@import "src/assets/scss/core";
+.news-section-head {
+    width: 100%;
+    gap: rem(24);
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    @include mobile {
+        grid-template-columns: 100%;
+        gap: rem(16);
+    }
+}

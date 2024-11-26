@@ -1,0 +1,43 @@
+@import "src/assets/scss/core";
+.news-card-contents {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    @include mobile {
+        grid-template-columns: 100%;
+    }
+    figure {
+        display: flex;
+        min-height: 0;
+        > div {
+            display: flex;
+        }
+        @include desktop {
+            grid-column: span 5;
+        }
+        img {
+            object-fit: cover;
+            border-radius: rem(36);
+            object-position: center center;
+            @include mobile {
+                border-radius: rem(24);
+            }
+        }
+    }
+    .news-card-info {
+        gap: rem(24);
+        padding: rem(36);
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: rem(18);
+        @include desktop {
+            grid-column: span 7;
+        }
+        @include mobile {
+            gap: rem(16);
+            padding: rem(24);
+            font-size: rem(16);
+        }
+    }
+}

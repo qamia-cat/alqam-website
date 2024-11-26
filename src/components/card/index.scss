@@ -1,0 +1,31 @@
+@import "src/assets/scss/core";
+.card-holder {
+    display: flex;
+    width: 100%;
+    background: c(b, 0.6);
+    border-radius: rem(36);
+    position: relative;
+    transition: 400ms transform, 400ms background-color, 400ms box-shadow;
+    box-shadow: 0 rem(20) rem(60) rem(-20) c(hero, 0);
+    @include mobile {
+        border-radius: rem(24);
+    }
+    &.clickable {
+        cursor: pointer;
+        img {
+            transition: 400ms filter;
+        }
+        @include hover {
+            background: c(b, 0.8);
+            box-shadow: 0 rem(20) rem(60) rem(-20) c(hero, 0.3);
+            img {
+                filter: saturate(1.5);
+            }
+        }
+        &.hoverTransform {
+            @include hover {
+                transform: translateY(rem(-6));
+            }
+        }
+    }
+}

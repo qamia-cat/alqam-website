@@ -1,0 +1,16 @@
+@import "src/assets/scss/core";
+.image-component-holder {
+    width: 100%;
+    margin: rem(-40) 0 0;
+    @include mobile {
+        margin: rem(-16) 0 0;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: rem(48);
+        @include mobile {
+            border-radius: rem(24);
+        }
+    }
+}

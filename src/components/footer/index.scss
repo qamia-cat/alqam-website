@@ -1,0 +1,13 @@
+@import "src/assets/scss/core";
+.footer-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: rem(50) 0;
+    gap: rem(12);
+    font: 300 rem(14) / 1.6 $f;
+    @include mobile {
+        padding: rem(36) 0;
+    }
+}

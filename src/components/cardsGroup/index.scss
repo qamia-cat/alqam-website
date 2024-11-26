@@ -1,0 +1,63 @@
+@import "src/assets/scss/core";
+.cards-group-grid {
+    width: 100%;
+    gap: rem(20);
+    display: grid;
+    grid-template-columns: 100%;
+    @include mobile {
+        gap: rem(16);
+    }
+    > li {
+        display: flex;
+        > * {
+            display: flex;
+        }
+    }
+    @include desktop {
+        &.items-2, &.items-4 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &.items-3, &.items-6 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &.items-5 {
+            grid-template-columns: repeat(6, 1fr);
+            > li {
+                grid-column: span 2;
+                &:nth-child(4), &:nth-child(5) {
+                    grid-column: span 3;
+                }
+            }
+        }
+    }
+}
+.card-item-holder {
+    width: 100%;
+    padding: rem(36);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    gap: rem(24);
+    font: 300 rem(16) / 1.8 $f;
+    @include mobile {
+        gap: rem(16);
+        padding: rem(24);
+    }
+}
+.card-item-headings {
+    gap: rem(8);
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    @include mobile {
+        gap: rem(16);
+        --icon-external-size: #{rem(36)};
+    }
+    h4 {
+        font: 300 rem(20) / 1.4 $f;
+        text-wrap: balance;
+        @include mobile {
+            font-size: rem(18);
+        }
+    }
+}

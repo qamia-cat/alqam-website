@@ -1,0 +1,38 @@
+{
+  "name": "qamia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "qamia",
+  "author": "J",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@kunukn/react-collapse": "^3.0.15",
+    "axios": "^1.7.2",
+    "classnames": "^2.5.1",
+    "clyne-core": "^1.0.49",
+    "gatsby": "^5.13.5",
+    "gatsby-plugin-layout": "^4.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-react-svg": "^3.3.0",
+    "gatsby-plugin-sass": "^6.13.1",
+    "gatsby-plugin-smoothscroll": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.5",
+    "react-intersection-observer": "^9.10.3",
+    "react-scale-text": "^1.2.2",
+    "sass": "^1.77.4"
+  },
+  "devDependencies": {
+    "prop-types": "^15.8.1"
+  }
+}

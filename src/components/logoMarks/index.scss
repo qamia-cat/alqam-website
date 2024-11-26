@@ -1,0 +1,53 @@
+@import "src/assets/scss/core";
+.logo-marks-holder {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    > * {
+        display: flex;
+        &:last-child {
+            justify-content: flex-end;
+        }
+    }
+    @include mobile {
+        gap: rem(24);
+        grid-template-columns: 100%;
+        br {
+            display: none;
+        }
+    }
+}
+.logo-marks-contents {
+    display: flex;
+    gap: rem(30);
+    justify-content: flex-end;
+    width: 100%;
+    @include mobile {
+        gap: rem(16);
+        column-gap: rem(30);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    a {
+        display: flex;
+        transition: 400ms filter;
+        @include mobile {
+            width: 45%;
+        }
+        svg {
+            width: auto;
+            height: 100%;
+            max-width: inherit;
+            aspect-ratio: var(--aspect-ratio);
+            @include desktop {
+                min-height: rem(144);
+            }
+            @include mobile {
+                width: 100%;
+            }
+        }
+        @include hover {
+            filter: brightness(1.2);
+        }
+    }
+}

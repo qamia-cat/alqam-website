@@ -1,0 +1,15 @@
+@import "src/assets/scss/core";
+.logo-holder {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    transition: 400ms filter;
+    @include hover {
+        filter: brightness(1.2);
+    }
+    svg {
+        @include mobile {
+            height: rem(38) !important;
+        }
+    }
+}

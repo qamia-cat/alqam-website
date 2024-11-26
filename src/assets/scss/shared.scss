@@ -1,0 +1,149 @@
+:root {
+    --pageBackground: #{c(secondary)};
+    --headerHeight: #{rem(100)};
+    @include mobile {
+        --headerHeight: #{rem(106)};
+    }
+}
+html {
+    color: sc(b);
+    font-weight: 300;
+    @include desktop {
+        @media screen and (max-width: 1168px) {
+            font-size: 9.5px;
+        }
+        @media screen and (max-width: 1109px) {
+            font-size: 9px;
+        }
+        @media screen and (max-width: 1051px) {
+            font-size: 8.5px;
+        }
+        @media screen and (max-width: 992px) {
+            font-size: 8px;
+        }
+        @media screen and (max-width: 934px) {
+            font-size: 7.5px;
+        }
+        @media screen and (max-width: 876px) {
+            font-size: 7px;
+        }
+        @media screen and (max-width: 817px) {
+            font-size: 6.5px;
+        }
+    }
+    &, body {
+        scroll-behavior: smooth;
+    }
+    body {
+        @include mobile {
+            font-size: rem(16);
+        }
+    }
+}
+.guide {
+    padding: 0 rem(30);
+    max-width: rem(1108 + 60);
+    margin: auto;
+    width: 100%;
+    @include mobile {
+        padding: 0 rem(20);
+    }
+}
+.layout-grid {
+    width: 100%;
+    display: grid;
+    grid-row-gap: rem(80);
+    grid-template-columns: 100%;
+    @include mobile {
+        grid-row-gap: rem(36);
+    }
+    .layout-grid:not(.guide) {
+        grid-row-gap: rem(40);
+        @include mobile {
+            grid-row-gap: rem(24);
+        }
+    }
+}
+.link-hover {
+    background: linear-gradient(to right, transparent, transparent), linear-gradient(to right, currentColor, currentColor);
+    background-size: 100% rem(1), 0 rem(1);
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: 400ms color, 400ms background, 400ms border-color, 400ms box-shadow, 400ms background-size;
+    @include hover {
+        background-size: 0 rem(1), 100% rem(1);
+    }
+}
+.link-effect {
+    position: relative;
+    display: inline-block;
+    transform: translate3d(0, 0, 0);
+    &:after, &:before {
+        content: '';
+        position: absolute;
+        bottom: rem(3);
+        left: 0;
+        width: 100%;
+        height: rem(1);
+        background: currentColor;
+        transform-origin: right;
+        transform: scaleX(1) translateZ(0);
+        transition: transform .6s cubic-bezier(.165, .84, .44, 1) .3s;
+    }
+    &:after {
+        transform-origin: left;
+    }
+    .link-effect-hover-trigger:not(:hover) &:after, .link-effect-hover-trigger:hover &:before,
+    &:not(:hover):after, &:hover:before {
+        transform: scaleX(0) translateZ(0);
+        transition: transform .6s cubic-bezier(.165, .84, .44, 1);
+    }
+    &.hover-active {
+        &:not(:hover):not(.active) {
+            &:before {
+                transform: scaleX(0) translateZ(0);
+            }
+        }
+    }
+}
+.heading-2 {
+    font: 900 rem(36) / 1.4 $f;
+    color: sc(b);
+    text-wrap: balance;
+    @include mobile {
+        font-size: rem(24);
+        text-align: center;
+    }
+    &.s-big {
+        font: 900 rem(60) / 1.2 $f;
+        text-transform: uppercase;
+        @include mobile {
+            font-size: rem(36);
+            text-transform: none;
+        }
+    }
+}
+.heading-3 {
+    font: 900 rem(28) / 1.4 $f;
+    color: sc(b);
+    text-wrap: balance;
+    @include mobile {
+        font-size: rem(22);
+    }
+}
+.collapse-css-transition {
+    transition: height 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hide-on-mobile {
+    @include mobile {
+        display: none !important;
+    }
+}
+.show-on-mobile {
+    @include desktop {
+        display: none !important;
+    }
+}
+[id] {
+    scroll-margin-block-start: calc(var(--headerHeight) + #{rem(40)});
+}

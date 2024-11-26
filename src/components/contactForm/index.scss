@@ -1,0 +1,93 @@
+@import "src/assets/scss/core";
+.contact-us-form {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    gap: rem(20);
+    position: relative;
+    @include mobile {
+        gap: rem(16);
+    }
+    &.loading {
+        input, textarea {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+    }
+    .btn {
+        width: 100%;
+    }
+    input, textarea {
+        width: 100%;
+        font-size: rem(16);
+        background: sc(b, 0.05);
+        border: rem(1.5) solid sc(b, 0);
+        padding: 0 rem(24);
+        font-weight: 300;
+        font-family: $f;
+        min-height: rem(62);
+        border-radius: rem(16);
+        transition: 400ms border, 400ms background-color, 400ms opacity;
+        color: sc(b);
+        -webkit-text-fill-color: sc(b);
+        @include mobile {
+            min-height: rem(56);
+        }
+        @include placeholder {
+            font-weight: 300;
+            font-family: $f;
+            color: sc(b, 0.5);
+            font-size: rem(16);
+            -webkit-text-fill-color: sc(b, 0.5);
+        }
+        &:not(:focus) {
+            @include hover {
+                background: sc(b, 0.08);
+            }
+        }
+        &.error {
+            background: sc(b, 0);
+            border-color: c(danger);
+        }
+        &:focus {
+            border-color: sc(b);
+            background: sc(b, 0);
+        }
+    }
+    textarea {
+        padding-top: rem(18);
+        padding-bottom: rem(18);
+        min-height: rem(160);
+        resize: vertical;
+    }
+}
+.loading-splash {
+    transition: 400ms opacity, 400ms transform;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:not(.active) {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+.contact-us-sub {
+    width: 100%;
+}
+.cu-inline-message {
+    width: 100%;
+    margin: rem(20) 0 0;
+    font: f(16, 22) $f;
+    background: c(b);
+    padding: rem(16);
+    text-align: center;
+    border-radius: rem(16);
+    color: c(success);
+    @include mobile {
+        font-size: rem(14);
+    }
+    &.t-error {
+        color: c(danger);
+    }
+}

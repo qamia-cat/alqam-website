@@ -1,0 +1,22 @@
+$f: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+$mobile: 730px;
+
+$fontSize: 20;
+$lineHeight: 16;
+
+$setColorDark: #022E2B;
+
+$c: (
+    b: #ffffff,
+    hero: #184536,
+    danger: #ff5d55,
+    success: #00973f,
+    secondary: lighten(#E6EDDE, 5),
+);
+
+$setColorLightList: (
+    #ff5d55,
+);
+
+@import "clyne-core/index";

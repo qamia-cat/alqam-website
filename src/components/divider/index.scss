@@ -1,0 +1,13 @@
+@import "src/assets/scss/core";
+hr {
+    display: block;
+    border: 0;
+    height: rem(1);
+    background: sc(b, 1);
+    transition: 1s transform, 2s background;
+    transform: scaleX(0);
+    &.active {
+        transform: scaleX(1);
+        background: sc(b, 0.1);
+    }
+}
