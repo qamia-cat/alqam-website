@@ -9,10 +9,11 @@ $setColorDark: #022E2B;
 
 $c: (
     b: #ffffff,
-    hero: #184536,
+/*    hero: #184536,*/
+    hero: lighten(#000000, 15),
     danger: #ff5d55,
     success: #00973f,
-    secondary: lighten(#E6EDDE, 5),
+    secondary: lighten(#A9A9A9, 25),
 );
 
 $setColorLightList: (
@@ -20,3 +21,4 @@ $setColorLightList: (
 );
 
 @import "clyne-core/index";
+

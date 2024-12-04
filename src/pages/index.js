@@ -10,4 +10,4 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Qamia - AI & Quantum Solutions Now</title>;
+export const Head = () => <title>Al Qam - Quantum Technology Solutions</title>;

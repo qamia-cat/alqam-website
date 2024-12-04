@@ -3,7 +3,7 @@
  */
 module.exports = {
     siteMetadata: {
-        title: 'Qamia',
+        title: 'Al Qam',
         siteUrl: 'https://www.qamia.ae/'
     },
     plugins: [
@@ -13,8 +13,8 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'Qamia - AI & Quantum Solutions Now',
-                short_name: 'Qamia',
+                name: 'Al Qam - Quantum Technology Solutions',
+                short_name: 'Al Qam',
                 start_url: '/',
                 background_color: '#ffffff',
                 theme_color: '#184536',

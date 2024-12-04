@@ -11,18 +11,18 @@ export const letsGetInTouch = {
     contacts: [
         {
             icon: 'icon-phone-filled',
-            url: 'tel:+971585998148',
-            children: '+971 58 599 8148',
+            url: 'tel:+123456789',
+            children: '+123456789',
         },
         {
             icon: 'icon-email-filled',
-            url: 'mailto:info@qamia.ae',
-            children: 'info@qamia.ae',
+            url: 'mailto:info@CHANGEME.COM',
+            children: 'info@CHANGEME.COM',
         },
         {
             icon: 'icon-linkedin-filled',
             url: 'https://www.linkedin.com/company/qamia-ai',
-            children: '@qamia-ai',
+            children: '@al-qam-ai',
         },
     ],
 };

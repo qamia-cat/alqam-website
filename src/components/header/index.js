@@ -34,29 +34,29 @@ const Header = () => {
                 className: 'hide-on-mobile',
             },
         ], !news?.list?.length),
-        {
-            label: 'Services',
-            ...(services.every(services => services.article) ? {
-                children: servicesRoutes.map(url => ({
-                    url,
-                    label: services.find(service => url.includes(service.slug))?.title,
-                })),
-            } : location.pathname === '/' ? {
-                onClick: () => scrollTo(`#${servicesBlockId}`),
-            } : {
-                url: `/#${servicesBlockId}`,
-            }),
-        },
+        // {
+        //     label: 'Services',
+        //     ...(services.every(services => services.article) ? {
+        //         children: servicesRoutes.map(url => ({
+        //             url,
+        //             label: services.find(service => url.includes(service.slug))?.title,
+        //         })),
+        //     } : location.pathname === '/' ? {
+        //         onClick: () => scrollTo(`#${servicesBlockId}`),
+        //     } : {
+        //         url: `/#${servicesBlockId}`,
+        //     }),
+        // },
         {
             label: 'About Us',
             url: '/about-us/',
         },
-        ...conditionalSpread([
-            {
-                label: 'News',
-                url: '/news/',
-            },
-        ], !!news?.list?.length),
+        // ...conditionalSpread([
+        //     {
+        //         label: 'News',
+        //         url: '/news/',
+        //     },
+        // ], !!news?.list?.length),
         {
             label: 'Contact Us',
             onClick: () => scrollTo(`#${contactBlockId}`),

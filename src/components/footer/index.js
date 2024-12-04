@@ -13,7 +13,7 @@ const Footer = () => {
             <div className='footer-contents'>
                 <Animate fit>
                     <Logo
-                        height={36}
+                        height={100}
                         variant='original'
                     />
                 </Animate>
@@ -21,7 +21,7 @@ const Footer = () => {
                     fit
                     delay={200}
                 >
-                    <p>Copyright © Qamia {new Date().getFullYear()} All rights reserved.</p>
+                    <p>Copyright © Al Qam {new Date().getFullYear()} All rights reserved.</p>
                 </Animate>
             </div>
         </footer>
